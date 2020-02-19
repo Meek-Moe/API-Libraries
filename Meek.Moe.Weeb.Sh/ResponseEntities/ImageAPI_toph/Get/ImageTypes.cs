@@ -19,7 +19,7 @@ namespace Meek.Moe.Weeb.Sh.ResponseEntities.ImageAPI_toph.Get
             [JsonPropertyName("url")]
             public string Url { get; set; }
             [JsonPropertyName("id")]
-            public string Id { get; set; }
+            public string ID { get; set; }
             [JsonPropertyName("fileType")]
             public string FileType { get; set; }
             [JsonPropertyName("baseType")]

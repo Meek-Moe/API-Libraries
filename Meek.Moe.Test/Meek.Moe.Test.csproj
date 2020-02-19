@@ -6,10 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="4.7.0" />
+    <PackageReference Include="System.Text.Json" Version="4.7.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Meek.Moe.ZeroChan\Meek.Moe.ZeroChan.csproj" />
     <ProjectReference Include="..\Meek.Moe\Meek.Moe.csproj" />
   </ItemGroup>
 

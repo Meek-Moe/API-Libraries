@@ -1,0 +1,5 @@
+﻿POST AddTagsToImage
+DELETE RemoveTagsFromImage
+DELETE DeleteImage
+GET ListImages
+GET ListImagesUser
