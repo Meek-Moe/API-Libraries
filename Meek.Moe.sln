@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meek.Moe", "Meek.Moe\Meek.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meek.Moe.Weeb.Sh", "Meek.Moe.Weeb.Sh\Meek.Moe.Weeb.Sh.csproj", "{5E4AD79C-608F-4E32-9945-1CE7C5AF96CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meek.Moe.ZeroChan", "Meek.Moe.ZeroChan\Meek.Moe.ZeroChan.csproj", "{7F159A87-A9B6-4BDD-A77E-7B5FC74C4420}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Meek.Moe.ZeroChan", "Meek.Moe.ZeroChan\Meek.Moe.ZeroChan.csproj", "{7F159A87-A9B6-4BDD-A77E-7B5FC74C4420}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

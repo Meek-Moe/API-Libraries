@@ -8,11 +8,9 @@ namespace Meek.Moe.Test
     {
         static async Task Main(string[] args)
         {
-            //var meek = new MeekMoeClient();
-            //var hm = await meek.GetRandomImage(Enums.Endpoints.HatsuneMiku);
             
             await c.LoginAsync();
-            var hm = await c.GetByTagSortedByPage("Hatsune Miku");
+            var hm = await c.GetByTagSortedByID("Hatsune Miku", 2656264);
             Console.WriteLine("Hello World!");
 
         }

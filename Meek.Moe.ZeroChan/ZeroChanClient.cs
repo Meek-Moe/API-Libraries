@@ -51,23 +51,44 @@ namespace Meek.Moe.ZeroChan
             
         }
 
-        public async Task<PageMain> GetByTagSortedByPage(string tag, int page = 1)
+        public async Task<TagResultsPageByPages> GetNewestByTagSortedByPage(string tag, int page = 1)
         {
-            if (page < 1) page = 1;
+            if (page < 1)
+                throw new Exception("Page number cant be under 1");
+            if (page > 100)
+                throw new Exception("For pages higher than 100\n" +
+                    "Use the Page to ID search Converter to get the 'next' page");
             tag = Uri.EscapeDataString(tag);
             string content = await _client.GetStringAsync("https://www.zerochan.net/" + tag + "?p=" + page);
-            PageMain items = PageJsonParser.ParseSearchQueryPageWithPageCount(content);
+            TagResultsPageByPages items = PageJsonParser.ParseSearchQueryPageWithPageCount(content, page);
             return items;
         }
 
-
-
-        public async Task<PageMain> GetByTagSortedByID(string tag, int id = 0)
+        public async Task<TagResultsPageByID> GetNewestIDPageAfter100thPage(string tag)
         {
-            if (id < 0) id = 0;
+            tag = Uri.EscapeDataString(tag);
+            string content = await _client.GetStringAsync("https://www.zerochan.net/" + tag + "?p=100");
+            TagResultsPageByID items = PageJsonParser.ParseSearchQueryPageWithID(content, 100);
+            return items;
+        }
+
+        public async Task<TagResultsPageByID> GetNewestByTagSortedByID(string tag, int id = 0)
+        {
+            if (id < 0)
+                throw new Exception("ID cant be under 0");
             tag = Uri.EscapeDataString(tag);
             string content = await _client.GetStringAsync("https://www.zerochan.net/" + tag + "?o=" + id);
-            PageMain items = PageJsonParser.ParseSearchQueryPageWithID(content);
+            TagResultsPageByID items = PageJsonParser.ParseSearchQueryPageWithID(content, id);
+            return items;
+        }
+
+        public async Task<TagResultsPageByPages> GetUserGallery(string username, int page = 1)
+        {
+            if (page < 1)
+                throw new Exception("Page number cant be under 1");
+            username = Uri.EscapeDataString(username);
+            string content = await _client.GetStringAsync("https://www.zerochan.net/user/" + username + "?p=" + page);
+            TagResultsPageByPages items = PageJsonParser.ParseSearchQueryPageWithPageCount(content, page);
             return items;
         }
     }
